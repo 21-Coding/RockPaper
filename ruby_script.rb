@@ -13,7 +13,7 @@ if player_one == player_two
   puts game.tie?
   puts "Player 1: #{player_one}"
   puts "Player 2: #{player_two}"
-elsif (player_one != inputs) | (player_two != inputs)
+elsif !inputs.include?(player_one) | !inputs.include?(player_two)
   puts "Try again! (You must enter rock, paper or scissors.)"
   puts "Player 1: #{player_one}"
   puts "Player 2: #{player_two}"
