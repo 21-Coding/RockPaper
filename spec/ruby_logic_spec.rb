@@ -4,31 +4,28 @@ require('ruby_logic')
 describe('#win?')do
 it("returns true if rock is the object and scissors is the argument") do
   game = RPS.new("rock", "scissors")
-  expect(game.win?()).to(eq(true))
+  expect(game.win?()).to(eq("Player 1 wins!"))
+end
+it("returns true if scissors is the object and rock is the argument") do
+  game = RPS.new("scissors", "rock")
+  expect(game.win?()).to(eq("Player 2 wins!"))
 end
 it("returns true if scissors is the object and paper is the argument") do
   game = RPS.new("scissors", "paper")
-  expect(game.win?()).to(eq(true))
+  expect(game.win?()).to(eq("Player 1 wins!"))
+end
+it("returns true if paper is the object and scissors is the argument") do
+  game = RPS.new("paper", "scissors")
+  expect(game.win?()).to(eq("Player 2 wins!"))
 end
 it("returns true if paper is the object and rock is the argument") do
   game = RPS.new("paper", "rock")
-  expect(game.win?()).to(eq(true))
+  expect(game.win?()).to(eq("Player 1 wins!"))
 end
+it("returns true if rock is the object and paper is the argument") do
+  game = RPS.new("rock", "paper")
+  expect(game.win?()).to(eq("Player 2 wins!"))
 end
-
-describe('#lose?') do
-  it("returns true if scissors is the object and rock is the argument") do
-    game = RPS.new("scissors", "rock")
-    expect(game.lose?()).to(eq(true))
-  end
-  it("returns true if paper is the object and scissors is the argument") do
-    game = RPS.new("paper", "scissors")
-    expect(game.lose?()).to(eq(true))
-  end
-  it("returns true if rock is the object and paper is the argument") do
-    game = RPS.new("rock", "paper")
-    expect(game.lose?()).to(eq(true))
-  end
 end
 
 describe('#tie?') do
